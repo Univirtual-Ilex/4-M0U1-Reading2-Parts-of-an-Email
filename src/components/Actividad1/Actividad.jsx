@@ -3,51 +3,50 @@ import React from 'react'
 import Container from '../Container'
 import ProgressBar from '../ProgressBar'
 import MainTitle from '../MainTitle'
-import DraggableItem from '../Draggable'
-import Area from '../AreaDrop'
 import ButtonUi from '../ButtonControlUI'
+import {ICol, IRow} from '../Grid'
+import Sentence from '../Sentence'
 
 // Styles
 import styled from 'styled-components'
-import styles, { DraggablesContainer, AreasContainer, ProgressbarContainer, UiButtonsContainer } from './Actividad_styles'
+import styles, { ProgressbarContainer, UiButtonsContainer } from './Actividad_styles'
 import Ilex from '../../App/variables'
-import dataItems from './Actividad_data'
 
 
 
 const Actividad_base =  ({...props}) => {
     return (
-        <Container bgImage='./src/bg_actividad1.png' {...props}>
+        <Container bgImage='./src/bg_actividad1.png' w={69} h={38.8} {...props}>
             
             <UiButtonsContainer>
-                <ButtonUi icon='ilx-ayuda' tooltip='msjClick one time in each phrase to listen how pronounce them. Listen before start to resolve the exercise' />
+                <ButtonUi icon='ilx-ayuda' tooltip='slide the sentences to organize them, then press check to verify if it is right or wrong, press hint if you need help   ' />
                 <ButtonUi icon='ilx-volver' tooltip='Start Again' />
             </UiButtonsContainer>
 
             <ProgressbarContainer>
                 <ProgressBar progress={0}/>
-            </ProgressbarContainer>
-            
+            </ProgressbarContainer>         
 
 
             <MainTitle color={Ilex.violeta2}>
-            CLICK AND LISTEN TO EACH EXPRESSION AND CLASSIFY IN THEIR RIGHT GROUP
+            ORGANIZE THE SENTENCES IN THE CORRECT ORDER 
             </MainTitle>
-            
-            <DraggablesContainer>
-                
-                { dataItems.map((dato)=>{
-                    return(
-                        <DraggableItem name={dato.name} key={dato.id} />
-                    )
-                }) }
 
-            </DraggablesContainer>
-            <AreasContainer>
-                <Area title='University Campus'/>
-                <Area  title='Classes'/>
-                <Area  title='Introducing People'/>
-            </AreasContainer>
+            <IRow w={90} align='center' pt={2}>
+                <ICol w={100}> 
+                    <Sentence basename='Account/From' words={['your', 'email', 'goes', 'in', 'this', 'part']} />
+                    <Sentence basename='To' words={['you', 'write', 'the', 'recipient`s', 'email', 'in', 'this', 'part']} />
+                    <Sentence basename='Subject field' words={['you', 'write', 'the', 'purpose', 'of', 'your', 'message', 'in', 'this','part']} />
+                    <Sentence basename='Greeting' words={['you', 'say', 'hello', 'or', 'greet', 'the', 'person', 'you', 'write','the','message', 'to']}/>
+                    <Sentence basename='Introduction' words={['you', 'introduce', 'the', 'message', 'you', 'want', 'to', 'send', 'on', 'this', 'section']}/>
+                    <Sentence basename='Body' words={['the', 'content', 'of', 'your', 'message', 'goes', 'in', 'this', 'part']}/>
+                    <Sentence basename='Conclusion' words={['you', 'conclude', 'the', 'message', 'in', 'this', 'section']}/>
+                    <Sentence basename='Complimentary close' words={['it', 'is', 'a', 'section', 'of', 'the', 'message', 'that', 'you', 'include', 'before', 'your', 'signature']}/>
+                    <Sentence basename='Signature' words={['in', 'this', 'part', 'you', 'write', 'your', 'name', 'to', 'finish', 'the', 'message']}/>
+                    <Sentence basename='Attachments' words={['here', 'you', 'include', 'a', 'document', 'or', 'photo', 'to', 'the', 'message', 'email']}/>
+                </ICol>
+            </IRow>
+
             
         </Container>
     )

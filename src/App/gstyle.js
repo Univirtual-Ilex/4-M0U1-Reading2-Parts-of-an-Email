@@ -2,8 +2,10 @@ import { createGlobalStyle } from 'styled-components'
 import Ilex from './variables'
 import icons from './fontIcon'
 
+
 const Gstyle = createGlobalStyle`
     ${icons}
+
     *{
         margin: 0;
         padding: 0;
@@ -24,14 +26,6 @@ const Gstyle = createGlobalStyle`
     #root{
         width:100%;
         height:100%;
-    }
-    .viewport{
-        width:68.8125em;
-        height:32.625em;
-        border-radius:0.5em;
-        background-color: #fff;
-        box-sizing: border-box;
-        position:relative;
     }
     h1,h2,h3,h4,h5{
         font-family:${Ilex.titulos}
