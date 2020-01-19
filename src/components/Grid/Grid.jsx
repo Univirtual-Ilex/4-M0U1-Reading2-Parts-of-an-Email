@@ -24,11 +24,7 @@ export const ICol = styled.div`
 // Componente base
 const Grid_base = ({...props}) => {
     return (
-        <IRow {...props} justify='center' w={80} align='center' gutters={0.4}>
-            <ICol w={26}>Creado el componente Grid</ICol>
-            <ICol w={70}>Creado el componente Grid</ICol> 
-            <ICol w={30}>Creado el componente Grid</ICol>           
-        </IRow>
+        <section { ...props }> props.children </section>
     )
 }
 const Grid = styled(Grid_base)`${ styles }`

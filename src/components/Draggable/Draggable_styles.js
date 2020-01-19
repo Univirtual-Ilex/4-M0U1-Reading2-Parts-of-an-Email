@@ -12,4 +12,18 @@ const styles = css`
     font-size:0.75em;
     margin:0.5em 0.5em;
 `
+
+
+export const draggableBlock = css`
+    width:${ props => props.w || 100}%;
+    font-size:0.7em;
+    background-color: ${Ilex.dragItem};
+    padding:0.25em 0.5em;
+    margin:0.25em 0;
+    cursor:move;
+
+
+`
+
+
 export default styles
