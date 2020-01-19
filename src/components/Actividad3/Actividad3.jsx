@@ -13,31 +13,42 @@ import { ProgressbarContainer } from '../Actividad1/Actividad_styles'
 import {Olist} from './Actividad3_styles'
 import {Item}from './Actividad3_styles'
 import ButtonModal from '../ButtonModal'
+import { IRow, ICol } from '../Grid'
 
 
 // Componente base
 const Actividad3_base = ({...props}) => {
     return (
-        <Container {...props} bgImage='./src/bg_actividad1.png'>
+        <Container {...props} bgImage='./src/bg_actividad1.png' w={69} h={38.8}>
             <ProgressbarContainer>
                 <ProgressBar progress={75} />
             </ProgressbarContainer>
             <div className='container-content'>
                 <MainTitle color={Ilex.violeta2}> COMPLETE THE SENTENCES WITH THE CORRECT WORDS FROM THE CONVERSATION </MainTitle>
             </div>
-            <div className='listado'>
-                <Olist>
-                    <Item> Marcela has <InputWords /> to Literature class on Tuesdays.</Item>
-                    <Item> Johnny and Marcela’s class is in room  <InputWords /> </Item>
-                    <Item> Johnny’s class at “La Julita” is in room  <InputWords /></Item>
-                    <Item> Antonio has <InputWords /> and writing class with Johnny. </Item>
-                    <Item> Marcela and Johnny have class at the Fine  <InputWords /> building.</Item>
-                </Olist>
-                <div className='contenedorButton'>
-                <ButtonModal>Ready</ButtonModal> 
-                </div>
 
-            </div>
+            <IRow>                
+                <ICol py={1.5}>
+                    <Olist>
+                        <Item> The  person who writes the message is  <InputWords />.</Item>
+                        <Item> The person who sends the message is   <InputWords /> </Item>
+                        <Item> The student is in <InputWords /> semester </Item>
+                        <Item> The student is studying  <InputWords /> </Item>
+                        <Item> The student needs to leave  the university campus because he has classes at   <InputWords  w={10} /> </Item>
+                        <Item> He has to do a lot of <InputWords/></Item>
+                        <Item> The majority of the students’ classmates are <InputWords /> </Item>
+                        <Item> The most difficult subject for the student is  <InputWords /> </Item>
+                        <Item> The student feels <InputWords /> with his program.</Item>
+                        <Item> The student wants to contribute to <InputWords /></Item>
+                    </Olist>
+
+                    <div className='contenedorButton'>
+                    <ButtonModal>Ready</ButtonModal> 
+                    </div>
+
+                </ICol>
+            </IRow>
+
         </Container>
 
     )

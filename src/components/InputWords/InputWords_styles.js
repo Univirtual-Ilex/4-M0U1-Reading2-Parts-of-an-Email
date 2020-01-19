@@ -3,8 +3,8 @@ import Ilex from '../../App/variables'
 
 const styles = css`
 display: inline-block;
-margin: ${props => props.m ? props.m : 0}em;
-width:${props => props.w ? props.w : '100'}%;
+margin: ${props => props.m || 0}em;
+width:${props => props.w ? props.w+'em' : 'auto'};
 
 `
 
