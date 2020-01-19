@@ -9,7 +9,7 @@ import { ProgressbarContainer } from '../Actividad1/Actividad_styles'
 import Container from '../Container'
 import ProgressBar from '../ProgressBar'
 import MainTitle from '../MainTitle'
-import ButtonX from '../ButtonX'
+import { IRow, ICol } from '../Grid'
 
 // Componente base
 const Actividad2_base = ({...props}) => {
@@ -17,15 +17,14 @@ const Actividad2_base = ({...props}) => {
         <Container bgImage='./src/bg_actividad1.png' {...props}>
             <ProgressbarContainer>
                 <ProgressBar progress={50}/>
-                <div class='container-content'>
-                    <MainTitle color={Ilex.violeta2}> Videoquiz </MainTitle>
-                    <p className='text'>Watch and listen to the video “First week of classes at university”
-Choose if the statements are true or false</p>
-                </div>
-                <div className='buttoncontainer'>
-                    <ButtonX> Go </ButtonX>
-                </div>
             </ProgressbarContainer>
+            <IRow w={100} align='center' justify='center' py={0.5}>
+                <ICol w={100}>
+                    <div className='container-content'>
+                        <MainTitle color={Ilex.violeta2}> ORGANIZE THE EMAIL IN THE CORRECT ORDER  </MainTitle>
+                    </div>
+                </ICol>
+            </IRow>
         </Container>
 
     )

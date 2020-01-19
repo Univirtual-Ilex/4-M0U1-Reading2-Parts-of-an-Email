@@ -6,15 +6,9 @@ const styles = css`
 
     .container-content{
 
-        margin-top: 6em;
+        margin-top: 1.5em;
     }
-    .text{
-        padding: 1em 0;
-    }
-    .buttoncontainer{
-        display: flex;
-        justify-content: center;
-    }
+
 
 `
 

@@ -25,6 +25,8 @@ const Sentence_base = ({basename, words, ...props}) => {
                     }) }
                 </div>
                 <div className='d-line eval'>
+                    <span className='ok'><img src='./src/ok.svg' alt='Ok'/></span>
+                    <span className='wrong'><img src='./src/wrong.svg' alt='Error'/></span>
                     <ButtonEval color={Ilex.color_amarilloClaro} mx={0.2} txtcolor={Ilex.morado}>Hint</ButtonEval>
                     <ButtonEval color={Ilex.morado} mx={0.2}>Check</ButtonEval>
                 </div>
