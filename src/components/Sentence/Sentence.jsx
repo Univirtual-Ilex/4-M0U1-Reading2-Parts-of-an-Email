@@ -4,25 +4,38 @@ import React from 'react'
 import styled from 'styled-components'
 import styles from './Sentence_styles'
 import Ilex from '../../App/variables'
+import {ReactSortable} from 'react-sortablejs'
 
 //Components
 import DraggableItem from '../Draggable'
 import ButtonEval from '../ButtonEval'
+import { useState } from 'react'
 
 
 // Componente base
 const Sentence_base = ({basename, words, ...props}) => {
+    let [WordsState, setWordsState] = useState(words)
+    console.log('State is:',WordsState)
     return (
         <div {...props}>
             <article className='container'>
                 <div className='d-line field'>{basename}</div>
                 <div className='d-line words'>
-                    { words.map((word, index) => {
+                    <ReactSortable 
+                    list={WordsState} 
+                    setList={setWordsState}
+                    group="groupName"
+                    animation={200}
+                    delayOnTouchStart={true}
+                    delay={2}
+                    >
+                    { WordsState.map((word, index) => {
 
                         return(
-                            <DraggableItem name={word} key={index} />
+                            <DraggableItem name={word.name} key={word.id} />
                         )
                     }) }
+                    </ReactSortable>
                 </div>
                 <div className='d-line eval'>
                     <span className='ok'><img src='./src/ok.svg' alt='Ok'/></span>
