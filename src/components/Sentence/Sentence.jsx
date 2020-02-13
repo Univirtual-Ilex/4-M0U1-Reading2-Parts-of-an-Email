@@ -14,10 +14,13 @@ import { useState } from 'react'
 
 // Componente base
 const Sentence_base = ({basename, words, ...props}) => {
-    let [InitialState] = useState(words)
     let [WordsState, setWordsState] = useState(words)
+    let [InitialState] = useState(words)
     console.log('State is:',WordsState)
     console.log('Initial state is:', InitialState )
+    const probe = () => {
+        console.log(JSON.stringify(InitialState) === JSON.stringify(WordsState))
+    }
     return (
         <div {...props}>
             <article className='container'>
@@ -34,7 +37,7 @@ const Sentence_base = ({basename, words, ...props}) => {
                     { WordsState.map((word, index) => {
 
                         return(
-                            <DraggableItem name={word.name} key={basename+''+word.id} />
+                            <DraggableItem name={word.name} key={basename+''+word.id} onClick={probe} />
                         )
                     }) }
                     </ReactSortable>
