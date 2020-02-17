@@ -1,5 +1,5 @@
 //Import
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import styles from './Actividad2_styles'
 import Ilex from '../../App/variables'
@@ -12,8 +12,10 @@ import MainTitle from '../MainTitle'
 import { IRow, ICol } from '../Grid'
 import { DraggableBlock } from '../Draggable'
 import ButtonUi from '../ButtonControlUI'
+import {ReactSortable} from 'react-sortablejs'
 // Componente base
 const Actividad2_base = ({...props}) => {
+    // const [phrases, setphrases] = useState[]
     return (
         <Container bgImage='./src/bg_actividad1.png' {...props}>
 
@@ -33,6 +35,7 @@ const Actividad2_base = ({...props}) => {
             </IRow>
             
             <IRow align='center' justify='flex-start' w={80} pt={1}>
+                <ReactSortable>
                     <DraggableBlock>
                     From: Pedroaguirre98@gmail.com 
                     </DraggableBlock>
@@ -81,6 +84,7 @@ const Actividad2_base = ({...props}) => {
                     <DraggableBlock>
                     Love,Pedro
                     </DraggableBlock>
+                </ReactSortable>
            
             </IRow>
         </Container>
