@@ -14,25 +14,39 @@ import { useState } from 'react'
 
 // Componente base
 const Sentence_base = ({basename, words, ...props}) => {
-    let [WordsState, setWordsState] = useState(words)
-    let [InitialState] = useState(words)
-    console.log('State is:',WordsState)
-    console.log('Initial state is:', InitialState )
+
+    // Orden correcto de las frases
+    let InitialState = words
+
     const probe = () => {
-        console.log(JSON.stringify(InitialState) === JSON.stringify(WordsState))
+        console.log('initial' ,InitialState)
+
     }
+    // 
+    const randomizeItems = (array) => {
+        //let sortable = array.sort(()=>Math.random() - 0.5)
+        let sortable = array.map((item, index)=>{
+            return item
+        })
+        sortable.sort(()=>Math.random() - 0.5)
+        return sortable
+    }
+    
+    let [WordsState, setWordsState] = useState(randomizeItems(words))
+
     return (
         <div {...props}>
             <article className='container'>
                 <div className='d-line field'>{basename}</div>
                 <div className='d-line words'>
                     <ReactSortable 
-                    list={WordsState} 
-                    setList={setWordsState}
-                    group="groupName"
-                    animation={200}
-                    delayOnTouchStart={true}
-                    delay={2}
+                        list={WordsState} 
+                        setList={setWordsState}
+                        group="groupName"
+                        animation={200}
+                        delayOnTouchStart={true}
+                        delay={2}
+                        direction="horizontal"
                     >
                     { WordsState.map((word, index) => {
 
@@ -54,3 +68,4 @@ const Sentence_base = ({basename, words, ...props}) => {
 }
 const Sentence = styled(Sentence_base)`${ styles }`
 export default Sentence
+    
