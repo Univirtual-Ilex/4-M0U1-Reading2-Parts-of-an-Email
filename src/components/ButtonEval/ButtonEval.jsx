@@ -5,10 +5,11 @@ import styled from 'styled-components'
 import styles from './ButtonEval_styles'
 
 // Componente base
-const ButtonEval_base = ({color ,...props}) => {
+const ButtonEval_base = ({disabled, color ,...props}) => {
+
     return (
         <div {...props}>
-            <button className='btn-clean'>
+            <button className={`${ disabled ? 'disabled' : 'enabled' } btn-clean`} disabled={disabled}>
                 { props.children }
             </button>
 

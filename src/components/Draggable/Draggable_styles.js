@@ -1,6 +1,7 @@
 import { css } from 'styled-components'
 import Ilex from '../../App/variables'
 const styles = css`
+    
     background-color: #fff;
     border: 2px solid ${Ilex.dragItem};
     color: ${Ilex.violeta2};
@@ -11,6 +12,9 @@ const styles = css`
     cursor: move;
     font-size:0.75em;
     margin:0.5em 0.5em;
+    &.colorize{
+        border: 2px solid ${Ilex.verde};
+    }
 `
 
 

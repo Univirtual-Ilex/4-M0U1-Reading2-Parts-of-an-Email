@@ -15,6 +15,9 @@ button{
     &:hover{
         background-color: ${Ilex.color_amarilloOscuro};
     }
+    &.disabled {
+        opacity: 0.5;
+    } 
 }
 `
 
