@@ -1,5 +1,5 @@
 //Import
-import React, {useState} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import styles from './Actividad2_styles'
 import Ilex from '../../App/variables'
@@ -35,7 +35,7 @@ const Actividad2_base = ({...props}) => {
             </IRow>
             
             <IRow align='center' justify='flex-start' w={80} pt={1}>
-                <ReactSortable>
+                {/*<ReactSortable>*/}
                     <DraggableBlock>
                     From: Pedroaguirre98@gmail.com 
                     </DraggableBlock>
@@ -84,7 +84,7 @@ const Actividad2_base = ({...props}) => {
                     <DraggableBlock>
                     Love,Pedro
                     </DraggableBlock>
-                </ReactSortable>
+               {/* </ReactSortable>*/}
            
             </IRow>
         </Container>
