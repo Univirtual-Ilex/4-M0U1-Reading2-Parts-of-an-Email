@@ -1,1 +1,1 @@
-export {default} from './MainTitle'
+export {default, Subtitle} from './MainTitle'

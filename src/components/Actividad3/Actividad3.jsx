@@ -7,47 +7,48 @@ import Ilex from '../../App/variables'
 import ProgressBar from '../ProgressBar'
 import MainTitle from '../MainTitle'
 import InputWords from '../InputWords'
-
+import Modal from '../Generales/Modal'
 // styles from styled
 import { ProgressbarContainer } from '../Actividad1/Actividad_styles'
 import {Olist} from './Actividad3_styles'
 import {Item}from './Actividad3_styles'
-import ButtonModal from '../ButtonModal'
 import { IRow, ICol } from '../Grid'
+import { useState } from 'react'
 
 
 // Componente base
 const Actividad3_base = ({...props}) => {
+    const [feedback, setFeedback] = useState([])
+    const setInfo = (info) => {
+        setFeedback(feedback.concat(info))
+    }
     return (
-        <Container {...props} bgImage='./src/bg_actividad1.png' w={69} h={38.8}>
+        <Container {...props} bgImage='./src/bg_actividad1.png' w={69} h={43}>
             <ProgressbarContainer>
                 <ProgressBar progress={75} />
             </ProgressbarContainer>
             <div className='container-content'>
-                <MainTitle color={Ilex.violeta2}> COMPLETE THE SENTENCES WITH THE CORRECT WORDS FROM THE CONVERSATION </MainTitle>
+                <MainTitle color={Ilex.violeta2} size={1.3}> COMPLETE THE INFORMATION FROM THE EMAIL LETTER YOU ORGANIZED. WRITE THE INFORMATION ON THE SPACES.  </MainTitle>
             </div>
 
             <IRow>                
                 <ICol py={1.5}>
                     <Olist>
-                        <Item> The  person who writes the message is  <InputWords />.</Item>
-                        <Item> The person who sends the message is   <InputWords /> </Item>
-                        <Item> The student is in <InputWords /> semester </Item>
-                        <Item> The student is studying  <InputWords /> </Item>
-                        <Item> The student needs to leave  the university campus because he has classes at   <InputWords  w={10} /> </Item>
-                        <Item> He has to do a lot of <InputWords/></Item>
-                        <Item> The majority of the students’ classmates are <InputWords /> </Item>
-                        <Item> The most difficult subject for the student is  <InputWords /> </Item>
-                        <Item> The student feels <InputWords /> with his program.</Item>
-                        <Item> The student wants to contribute to <InputWords /></Item>
+                        <Item> The  person who writes the message is  <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/>.</Item>
+                        <Item> The person who sends the message is   <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/> </Item>
+                        <Item> The student is in <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/> semester </Item>
+                        <Item> The student is studying  <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/> </Item>
+                        <Item> The student needs to leave  the university campus because he has classes at <InputWords   answer="excelente" w={10} sendFeedback={(data) => { setInfo(data) } }/> </Item>
+                        <Item> He has to do a lot of <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/></Item>
+                        <Item> The majority of the students’ classmates are <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/> </Item>
+                        <Item> The most difficult subject for the student is  <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/> </Item>
+                        <Item> The student feels <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/> with his program.</Item>
+                        <Item> The student wants to contribute to <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/></Item>
                     </Olist>
-
-                    <div className='contenedorButton'>
-                    <ButtonModal>Ready</ButtonModal> 
-                    </div>
 
                 </ICol>
             </IRow>
+            <Modal visible={feedback.length === 10 } ok />
 
         </Container>
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import styles from './MainTitle_styles'
+import styles, {subtitle} from './MainTitle_styles'
 
-const MainTitle_base = ({children, color, ...props}) => {
+const MainTitle_base = ({size, children, color, ...props}) => {
     return (
         <h1 {...props}>
             { children }
@@ -12,6 +12,10 @@ const MainTitle_base = ({children, color, ...props}) => {
 
 const MainTitle = styled(MainTitle_base)`
     ${ styles }
+`
+
+export const Subtitle = styled(MainTitle)`
+    ${ subtitle }
 `
 
 export default MainTitle

@@ -3,8 +3,7 @@ import Ilex from '../../App/variables'
 
 const styles = css`
 display: inline-block;
-margin: ${props => props.m || 0}em;
-width:${props => props.w ? props.w+'em' : 'auto'};
+margin: 0.3em 0.8em;
 
 `
 
@@ -19,7 +18,10 @@ font-family:${Ilex.font};
 font-size:1em;
 color:${Ilex.textos};
 font-weight:bold;
-width:100%;
+&.ok {
+    border:2px dashed ${Ilex.verde};
+    color: ${Ilex.verde}
+}
 
 
 `
