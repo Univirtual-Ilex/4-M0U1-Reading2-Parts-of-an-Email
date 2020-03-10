@@ -5,7 +5,7 @@ import { ButtonmodalTo } from '../../ButtonModal'
 import styled from 'styled-components'
 import styles from './Modal_styles'
 
-const ModalBase = ( { w, ok, err, visible,nxtUrl,repeatUrl, finish, ...props } ) => {
+const ModalBase = ( { w, ok, err, visible,nxtUrl,repeatUrl, ...props } ) => {
     const ModalType = () => {
 
         if( ok && err) {

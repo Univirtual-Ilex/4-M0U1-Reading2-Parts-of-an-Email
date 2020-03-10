@@ -17,7 +17,7 @@ import { useState } from 'react'
 
 
 // Componente base
-const Actividad3_base = ({...props}) => {
+const Actividad3_base = ({staticContext, ...props}) => {
     const [feedback, setFeedback] = useState([])
     const setInfo = (info) => {
         setFeedback(feedback.concat(info))
@@ -48,7 +48,8 @@ const Actividad3_base = ({...props}) => {
 
                 </ICol>
             </IRow>
-            <Modal visible={feedback.length === 10 } ok finish />
+
+            <Modal visible={feedback.length === 10} ok nxtUrl="/home" repeatUrl="/actividad3" finish />
 
         </Container>
 

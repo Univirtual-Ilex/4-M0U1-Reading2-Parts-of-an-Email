@@ -18,7 +18,7 @@ import Modal from '../Generales/Modal'
 // DAta
 import data from './Actividad2_data'
 // Componente base
-const Actividad2_base = ({...props}) => {
+const Actividad2_base = ({staticContext, ...props}) => {
     
     
     // Función que reordena las palabras de forma aleatoria
@@ -90,7 +90,7 @@ const Actividad2_base = ({...props}) => {
                 </ReactSortable>
            
             </IRow>
-            <Modal visible={Feedback} ok />
+            <Modal visible={Feedback} ok nxtUrl="/actividad3" repeatUrl="/actividad1" />
         </Container>
 
     )

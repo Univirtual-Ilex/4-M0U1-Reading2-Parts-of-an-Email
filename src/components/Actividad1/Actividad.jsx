@@ -17,7 +17,7 @@ import { useState, useEffect } from 'react'
 
 
 
-const Actividad_base =  ({...props}) => {
+const Actividad_base =  ({staticContext,...props}) => {
     const [okSentences, setOkSentences] = useState([])
     const [solvedActivity, setSolvedActivity] = useState(false)
     const registerFeedBack = (data) => {
@@ -66,7 +66,7 @@ const Actividad_base =  ({...props}) => {
                 </ICol>
             </IRow>
 
-            <Modal visible={solvedActivity} ok />
+            <Modal visible={solvedActivity} ok nxtUrl="/actividad2" repeatUrl="/actividad1" />
         </Container>
     )
 
