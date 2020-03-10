@@ -5,7 +5,7 @@ import { ButtonmodalTo } from '../../ButtonModal'
 import styled from 'styled-components'
 import styles from './Modal_styles'
 
-const ModalBase = ( { w, ok, err, visible,nxtUrl,repeatUrl, ...props } ) => {
+const ModalBase = ( { w, ok, err, visible,nxtUrl,repeatUrl, finish, ...props } ) => {
     const ModalType = () => {
 
         if( ok && err) {
@@ -70,7 +70,7 @@ const ModalBase = ( { w, ok, err, visible,nxtUrl,repeatUrl, ...props } ) => {
 
                     <div className='ilx-modal-footer'>
                         <ButtonmodalTo inactivo href={repeatUrl}>Repeat</ButtonmodalTo>
-                        { !err &&  <ButtonmodalTo href={nxtUrl}> Next </ButtonmodalTo>  }
+                        { !err &&  <ButtonmodalTo href={nxtUrl}> { props.finish ? 'finish': 'Next'} </ButtonmodalTo>  }
                         
                     </div>
 

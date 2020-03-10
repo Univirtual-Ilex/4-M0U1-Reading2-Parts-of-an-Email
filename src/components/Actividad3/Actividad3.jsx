@@ -48,7 +48,7 @@ const Actividad3_base = ({...props}) => {
 
                 </ICol>
             </IRow>
-            <Modal visible={feedback.length === 10 } ok />
+            <Modal visible={feedback.length === 10 } ok finish />
 
         </Container>
 
