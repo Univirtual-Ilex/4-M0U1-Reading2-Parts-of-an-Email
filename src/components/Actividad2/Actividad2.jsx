@@ -1,5 +1,5 @@
 //Import
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import styles from './Actividad2_styles'
 import Ilex from '../../App/variables'
@@ -13,9 +13,52 @@ import { IRow, ICol } from '../Grid'
 import { DraggableBlock } from '../Draggable'
 import ButtonUi from '../ButtonControlUI'
 import {ReactSortable} from 'react-sortablejs'
+import Modal from '../Generales/Modal'
+
+// DAta
+import data from './Actividad2_data'
 // Componente base
 const Actividad2_base = ({...props}) => {
-    // const [phrases, setphrases] = useState[]
+    
+    
+    // Función que reordena las palabras de forma aleatoria
+    const randomizeItems = (array) => {
+        //let sortable = array.sort(()=>Math.random() - 0.5) // realiza un reordenamiento al azar
+        let sortable = array.map((item, index)=>{
+            return item
+        })
+        sortable.sort(()=>Math.random() - 0.5)
+        return sortable
+    }
+
+
+    const check = (evt) => {
+        let arr = draggable.map(item => {
+            return item.props['data-feedback']
+        })
+        if( arr.indexOf('err') === -1){
+            setFeedback(true)
+        } else {
+            setFeedback(false)
+        }
+    }
+
+
+
+
+
+
+    const [Data, setData] = useState(randomizeItems(data))
+    const [Feedback, setFeedback] = useState(false)
+
+
+     const draggable = Data.map((part, index) => (
+        <DraggableBlock key={part.id} data-index={index} target={part.targetPos} className={ part.targetPos === (index + 1) ? 'ok' : 'err'} data-feedback={part.targetPos === (index + 1) ? 'ok' : 'err'}>
+            { part.content }
+        </DraggableBlock>
+    ))
+
+
     return (
         <Container bgImage='./src/bg_actividad1.png' {...props}>
 
@@ -35,58 +78,19 @@ const Actividad2_base = ({...props}) => {
             </IRow>
             
             <IRow align='center' justify='flex-start' w={80} pt={1}>
-                {/*<ReactSortable>*/}
-                    <DraggableBlock>
-                    From: Pedroaguirre98@gmail.com 
-                    </DraggableBlock>
-
-                    <DraggableBlock>
-                    To: Jennifermartinez27@yahoo.com
-                    </DraggableBlock>
-
-                    <DraggableBlock>
-                    Subject: My new academic life 
-                    </DraggableBlock>
-
-                    <DraggableBlock>
-                    Hi, Jen! 
-                    </DraggableBlock>
-
-                    <DraggableBlock>
-                    How’s life treating you? I hope you’re doing well in New York. I have some news for you, I started studying Early Childhood Education at “Universidad Tecnologica de Pereira” last month. I am in 1st semester.  It is a little stressful sometimes because I have to do oral presentations for most of the classes. So, I sometimes get nervous but I try to do my best. 
-                    </DraggableBlock>
-
-                    <DraggableBlock>
-                    Most of the classes are at “La Julita” building, it is a bit away from the university campus, so I have to walk a lot when I have other classes in other buildings.
-                    </DraggableBlock>
-
-
-                    <DraggableBlock>
-                    My classmates are fun and kind. They are mostly girls, there aren’t many male students studying this career though so I try to get along with everyone.
-                    </DraggableBlock>
-
-
-                    <DraggableBlock>
-                    I can also tell you that one of the most difficult subjects for me right now is Mathematical abilities because as you know, I have always had problems with understanding math. However, my professor always explains to me the topics again. He is a very collaborative teacher.
-                    </DraggableBlock>
-
-
-                    <DraggableBlock>
-                    I want to contribute to future generations by educating children to build a better future. That’s why I’m happy studying this program because teaching is one of my passions.
-                    </DraggableBlock>
-
-
-                    <DraggableBlock>
-                    That’s all for now. Please write soon.
-                    </DraggableBlock>
-
-
-                    <DraggableBlock>
-                    Love,Pedro
-                    </DraggableBlock>
-               {/* </ReactSortable>*/}
+                <ReactSortable
+                    list={Data}
+                    setList={setData}
+                    group="groupName"
+                    animation={300}
+                    delayOnTouchStart={true}
+                    delay={2}
+                    onEnd={check} >
+                        { draggable }
+                </ReactSortable>
            
             </IRow>
+            <Modal visible={Feedback} ok />
         </Container>
 
     )

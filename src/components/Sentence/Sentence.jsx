@@ -86,6 +86,7 @@ const Sentence_base = ({basename, words, sendFeedback, ...props}) => {
     let [result, setResult] = useState('hidden')
     let [counterHint, setCounterHint] = useState(0)
     //colorizar
+    // eslint-disable-next-line
     let [color, setColor] = useState(-1)
     // Disabled sentence
 

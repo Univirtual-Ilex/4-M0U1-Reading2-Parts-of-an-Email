@@ -10,7 +10,7 @@ export const DraggableBlock = styled.div`
 `
 
 // Componente base
-const Draggable_base = ({ elementid, index, name, ...props }) => {
+const Draggable_base = ({ elementid, index, name, target, ...props }) => {
     return (
         <div {...props}>
             <span>{ name }</span>

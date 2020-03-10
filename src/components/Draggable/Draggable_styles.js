@@ -15,6 +15,7 @@ const styles = css`
     &.colorize{
         border: 2px solid ${Ilex.verde};
     }
+
 `
 
 
@@ -25,6 +26,10 @@ export const draggableBlock = css`
     padding:0.25em 0.5em;
     margin:0.25em 0;
     cursor:move;
+    &.ok{
+        background-color: ${Ilex.verde};
+        color:#274c50;
+    }
 
 
 `
