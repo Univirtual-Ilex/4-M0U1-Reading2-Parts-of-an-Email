@@ -34,16 +34,16 @@ const Actividad3_base = ({staticContext, ...props}) => {
             <IRow>                
                 <ICol py={1.5}>
                     <Olist>
-                        <Item> The  person who writes the message is  <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/>.</Item>
-                        <Item> The person who sends the message is   <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/> </Item>
-                        <Item> The student is in <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/> semester </Item>
-                        <Item> The student is studying  <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/> </Item>
-                        <Item> The student needs to leave  the university campus because he has classes at <InputWords   answer="excelente" w={10} sendFeedback={(data) => { setInfo(data) } }/> </Item>
-                        <Item> He has to do a lot of <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/></Item>
-                        <Item> The majority of the students’ classmates are <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/> </Item>
-                        <Item> The most difficult subject for the student is  <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/> </Item>
-                        <Item> The student feels <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/> with his program.</Item>
-                        <Item> The student wants to contribute to <InputWords answer="excelente" sendFeedback={(data) => { setInfo(data) } }/></Item>
+                        <Item> The  person who writes the message is  <InputWords answer="pedro" sendFeedback={(data) => { setInfo(data) } }/>.</Item>
+                        <Item> The person who sends the message is   <InputWords answer="jen" sendFeedback={(data) => { setInfo(data) } }/> </Item>
+                        <Item> The student is in <InputWords answer="1st" sendFeedback={(data) => { setInfo(data) } }/> semester </Item>
+                        <Item> The student is studying  <InputWords answer="early chilhood education" sendFeedback={(data) => { setInfo(data) } }/> </Item>
+                        <Item> The student needs to leave  the university campus because he has classes at <InputWords   answer="la julita" w={10} sendFeedback={(data) => { setInfo(data) } }/> </Item>
+                        <Item> He has to do a lot of <InputWords answer="oral presentations" sendFeedback={(data) => { setInfo(data) } }/></Item>
+                        <Item> The majority of the students’ classmates are <InputWords answer="girls" sendFeedback={(data) => { setInfo(data) } }/> </Item>
+                        <Item> The most difficult subject for the student is  <InputWords answer="math" sendFeedback={(data) => { setInfo(data) } }/> </Item>
+                        <Item> The student feels <InputWords answer="happy" sendFeedback={(data) => { setInfo(data) } }/> with his program.</Item>
+                        <Item> The student wants to contribute to <InputWords answer="future generations" sendFeedback={(data) => { setInfo(data) } }/></Item>
                     </Olist>
 
                 </ICol>
