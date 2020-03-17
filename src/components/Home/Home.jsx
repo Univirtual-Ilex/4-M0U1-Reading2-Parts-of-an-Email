@@ -12,7 +12,7 @@ const Home_base = function ({staticContext, ...props}) { // se le pasan las prop
         <Container {...props}  row bgImage="src/bg.png">
 
                     <div className='bloque-izquierdo'>
-                        <div className='bloque-izquierdo-container'>
+                        <div className='bloque-izquierdo-container entrada-top-Y'>
                             <h1>Parts of an Email </h1>
                             <p>
                             This activity count with 3 parts. Read, organize and complete the exercises 
@@ -20,7 +20,7 @@ const Home_base = function ({staticContext, ...props}) { // se le pasan las prop
                             <ButtonLink to='/actividad1'>Start</ButtonLink>
                         </div>
                     </div>
-                    <div className='bloque-derecho'>
+                    <div className='bloque-derecho entrada-top-Y-2'>
                         <figure>
                             <img src='./src/cover.png' alt='Logo' />    
                         </figure>
