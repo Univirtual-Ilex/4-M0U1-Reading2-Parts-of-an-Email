@@ -39,7 +39,7 @@ const Actividad_base =  ({staticContext,...props}) => {
             
             <UiButtonsContainer>
                 <ButtonUi icon='ilx-ayuda' tooltip='slide the sentences to organize them, then press check to verify if it is right or wrong, press hint if you need help   ' />
-                <ButtonUi icon='ilx-volver' tooltip='Start Again' onClick={() => window.location.href="/actividad1"} />
+                <ButtonUi icon='ilx-volver' tooltip='Start Again' onClick={ () => window.location.reload() } />
             </UiButtonsContainer>
 
             <ProgressbarContainer>
@@ -66,7 +66,7 @@ const Actividad_base =  ({staticContext,...props}) => {
                 </ICol>
             </IRow>
 
-            <Modal visible={solvedActivity} ok nxtUrl="/actividad2" repeatUrl="/actividad1" />
+            <Modal visible={solvedActivity} ok nxtUrl="#/actividad2" repeatUrl="#/actividad1" />
         </Container>
     )
 

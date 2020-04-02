@@ -8,7 +8,7 @@ import Ilex from './App/variables' //Variables
 
 
 // Router
-import {BrowserRouter, Route } from 'react-router-dom'
+import {HashRouter, Route } from 'react-router-dom'
 // Actividades
 // Actividad 1
 
@@ -54,12 +54,12 @@ const App = () => {
     <>
       <Gstyle/>
       <Fondo degradado={Ilex.degradado('-30deg',Ilex.color_amarilloClaro,Ilex.color_amarilloClaro,Ilex.color_amarilloOscuro)}>
-      <BrowserRouter>
+      <HashRouter>
         <Route path='/' exact component={Home} />
         <Route path='/actividad1'  component={Actividad1} />
         <Route path='/actividad2'  component={Actividad2} />
         <Route path='/actividad3'  component={Actividad3} />
-      </BrowserRouter>
+      </HashRouter>
       </Fondo>
       <Modal w='30'>
       </Modal>

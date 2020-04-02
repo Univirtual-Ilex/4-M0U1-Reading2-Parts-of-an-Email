@@ -49,7 +49,7 @@ const Actividad3_base = ({staticContext, ...props}) => {
                 </ICol>
             </IRow>
 
-            <Modal visible={feedback.length === 10} ok nxtUrl="/home" repeatUrl="/actividad3" finish />
+            <Modal visible={feedback.length === 10} ok nxtUrl="#/" repeatUrl="#/actividad3" finish />
 
         </Container>
 

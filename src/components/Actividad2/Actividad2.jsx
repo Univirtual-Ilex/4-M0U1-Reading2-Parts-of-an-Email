@@ -64,7 +64,7 @@ const Actividad2_base = ({staticContext, ...props}) => {
 
             <UiButtonsContainer>
                 <ButtonUi icon='ilx-ayuda' tooltip='slide the sentences to organize them, then press check to verify if it is right or wrong, press hint if you need help   ' />
-                <ButtonUi icon='ilx-volver' tooltip='Start Again' onClick={() => window.location.href="/actividad2"} />
+                <ButtonUi icon='ilx-volver' tooltip='Start Again' onClick={() => window.location.reload()} />
             </UiButtonsContainer>
 
             <ProgressbarContainer>
@@ -90,7 +90,7 @@ const Actividad2_base = ({staticContext, ...props}) => {
                 </ReactSortable>
            
             </IRow>
-            <Modal visible={Feedback} ok nxtUrl="/actividad3" repeatUrl="/actividad1" />
+            <Modal visible={Feedback} ok nxtUrl="#/actividad3" repeatUrl="#/actividad2" />
         </Container>
 
     )
