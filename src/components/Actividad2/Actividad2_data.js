@@ -22,7 +22,7 @@ const data = [
     },
     {
         "id":"4",
-        "content":"How’s life treating you? I hope you’re doing well in New York. I have some news for you, I started studying Early Childhood Education at “Universidad Tecnologica de Pereira” last month. I am in 1st semester. It is a little stressful sometimes because I have to do oral presentations for most of the classes. So, I sometimes get nervous but I try to do my best.",
+        "content":"How’s life treating you? I hope you’re doing well in New York. I have some news for you, I started studying Early Childhood Education at “Universidad Tecnologica de Pereira” last month. I am in 1st semester. It is a little stressful sometimes because I have to make oral presentations for most of the classes. So, I sometimes get nervous but I try to do my best.",
         "targetPos": 5
     },
     {
